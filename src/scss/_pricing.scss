@@ -1,54 +1,81 @@
-.container-pricing {
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 5px;
-    max-width: 100%;
-    padding: 1.5rem 4rem;
+.price-card{
+    position: relative;
+    background-color: #ffcc00;
+    border-radius: 24px;
+    min-height: 200px;
+    max-width: 45%;
+    margin: auto;
+    box-shadow: 0 4px 14px rgb(0 0 0 / 30%);
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 2.5rem;
-    padding: 2rem;
-    transition: all 0.5s;
-    &:hover {
-        background-color: #FFFEE5;
-        border-radius: 5px;
+.price-card-title{
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+
+
+.price-card-title-offer{
+    &:before{
+        content: '';
+        background-color: red;
+        height: 10px;
+        width: 80%;
+        position: absolute;
+        /* z-index: 10; */
+        top: 40px;
+        left: 10%;
+        opacity: 0.5;
+
     }
-    &__icon {
-        width: 7.5rem;
-        margin: 2.5rem auto;
+}
+
+.price-wrapper{
+    background-color: white;
+    border-radius: 16px;
+
+    p{
+        font-size: 2rem;
+        font-weight: 400;
     }
-    &__title {
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 2.2rem;
-        color: var(--blue);
-        margin: 2.5rem auto;
+}
+
+.price-side{
+    h1{
+        font-size: 6rem;
     }
-    &__description {
-        color: var(--description-color);
-        font-size: 1.6rem;
-        text-align: center;
-        line-height: 1.5;
+}
+
+@media screen and (max-width: 425px) {
+    .price-wrapper{
+        p{
+            font-size: 1.5rem;
+        }
     }
-    &__pricing {
-        color: var(--blue);
-        font-size: 1.4rem;
-        margin: 2.5rem auto;
-    }
-    &__price {
-        font-size: 2.6rem;
-        font-weight: 700;
-        & sup {
-            font-size: 1.6rem;
+
+    .price-side{
+        text-align: center !important;
+        h1{
+            font-size: 4rem;
         }
     }
 }
+
+@media screen and (max-width: 425px) {
+    .price-card{
+        min-height: 150px;
+    }
+    .price-card-title{
+            font-size: 2rem;
+            padding: 0.2rem !important;
+        }
+        .price-card-title-offer{
+            padding: 0.8rem 0 0 0 !important;
+            &:before{
+                top: 32px;
+        
+            }
+        }
+}
+
+
